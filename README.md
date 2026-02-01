@@ -1,35 +1,43 @@
-# Hallucination - Global Game Jam Project
+# Hallucination
 
-**Topic**: MASK.
-**Genre**: First-Person Horror Puzzle.
+> "Some things are better left unseen... until you put on the mask."
 
-## Project Overview
-A first-person horror puzzle where wearing a dangerous mask reveals a hallucinated reality. The player must use this mask to uncover hidden objects and trap a ghost.
+**Global Game Jam 2026 Submission**
 
-## Key Systems (Implemented)
+## 📖 Description
+**Hallucination** is a First-Person Horror Puzzle game built in Unreal Engine 5.
 
-### 🎭 The Mask Mechanic
-- **Toggle**: Press **F** to wear the mask.
-- **Visuals**: Hallucination Post-Process effect activates.
-- **Gameplay**: "Hidden" objects (Pickups) become visible only when the mask is worn.
-- **Timers**:
-  - **Duration**: Mask stays on for **30 seconds**.
-  - **Cooldown**: Mask takes **60 seconds** to recharge after use.
+Startled by a mysterious presence in an abandoned town, you discover a strange mask that allows you to see into a "Hallucinated Reality." But curiosity comes at a cost. The mask reveals what was hidden—keys, messages, and paths—but it also reveals **THEM**.
 
-## Technical Details
-- **Engine**: Unreal Engine 5 (Blueprint Implementation).
-- **Core Assets**: Located in `Content/Core`.
-  - `BP_FirstPersonCharacter`: Main logic for Mask, Input, and Visibility toggling.
-  - `BP_MasterPickup`: The hidden object that reacts to the mask.
-  - `BP_FirstPersonGameMode`: Sets the default pawn.
+The Ghost is invisible to the naked eye. It only exists when you wear the mask.
+*Do you dare to look?*
 
-## Troubleshooting
-If objects are not appearing:
-1. Ensure `BP_FirstPersonCharacter` is the Default Pawn in GameMode.
-2. Ensure `PostProcessVolume` in the level is set to **unbound**.
-3. Re-save `BP_MasterPickup` to ensure meshes are correctly initialized.
+## 🎮 Gameplay Features
+*   **The Mask Mechanic**: Press `F` to toggle the Mask.
+    *   **ON**: You see the Ghost and Hidden Objects (Keys/Clues). The world shifts into a nightmare.
+    *   **OFF**: You are safe from the Ghost's gaze, but blind to the truth.
+*   **Resource Management**: The mask has a **30-second duration** and a **60-second cooldown**. Use it wisely.
+*   **Dynamic Cutscenes**: Immersive narrative moments triggered by exploration.
+*   **Environment**: Set in a desolate "Saloon" and "Abandoned Village".
 
-## Authors
-- **Systems Lead**: [Your Name/AI Assistant]
-- **Ghost AI**: [Teammate 1]
-- **Level Design**: [Teammate 2]
+## ⌨️ Controls
+| Action | Input |
+| :--- | :--- |
+| **Move** | `W`, `A`, `S`, `D` |
+| **Look** | Mouse |
+| **Toggle Mask** | `F` |
+| **Interact** | `E` |
+| **Jump** | `Space` |
+
+## 📥 Installation
+1.  Download the `.zip` file from the Release page.
+2.  Extract contents.
+3.  Run `Hallucination.exe`.
+
+## 👥 Credits
+*   **Aryaman-Saraf**: Core Systems, Level Design, Implementation.
+*   **Hetanshu Bhambhani**: Ghost AI.
+*   **Suryansh Bakshi**: Asset Integration.
+
+---
+*Built with Unreal Engine 5 & Git LFS*
