@@ -1,0 +1,29 @@
+# Visual Studio 2019/2022
+.vs/
+*.sln
+*.suo
+*.opensdf
+*.sdf
+*.user
+
+# Unreal Engine
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+Build/
+
+# VS Code
+.vscode/
+*.VC.db
+*.opendb
+
+# Rider
+.idea/
+
+# Mac
+.DS_Store
+
+# Textures/Assets (Optional - usually you WANT these, but just in case of temp files)
+# *.psd
+# *.fbx

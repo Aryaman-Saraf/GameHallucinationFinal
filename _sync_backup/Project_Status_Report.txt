@@ -1,0 +1,55 @@
+PROJECT STATUS REPORT - HALLUCINATION
+Generated on: 2026-02-01
+
+1. PROJECT OVERVIEW
+-------------------
+Topic: MASK
+Genre: First-Person Horror Puzzle
+Engine: Unreal Engine 5 (Blueprint Implementation)
+Current State: Key gameplay mechanics (Mask, Visibility, Ghost) implemented.
+
+2. IMPLEMENTED FEATURES
+-----------------------
+
+A. The Mask Mechanic (Core Gameplay)
+   - Activation: Player can toggle the mask on/off (Input Action mapped, likely 'F').
+   - Duration Limit: Mask stays active for 30 seconds max.
+   - Cooldown: Requires 60 seconds recharge after depletion.
+   - Visuals: "Hallucination" Post-Process effect triggers when mask is ON.
+   - Logic Location: `BP_FirstPersonCharacter`
+
+B. Ghost Entity
+   - Logic: Ghost visibility is tied to the Mask state.
+     - Mask ON -> Ghost VISIBLE
+     - Mask OFF -> Ghost INVISIBLE
+   - Asset: `BP_Ghost` (Located in Content/Ghost)
+
+C. Hidden Object System (Pickups)
+   - Functionality: Objects that are invisible to the naked eye but appear when wearing the mask.
+   - Asset: `BP_MasterPickup` (Located in Content/Core)
+   - Logic: Listens for Mask state changes to toggle mesh visibility/collision.
+
+D. Player Character
+   - Movement: Standard First-Person movement (Walk, Jump).
+   - Input: Enhanced Input System used (`IMC_Default`).
+   - Interaction: Handles the timer and state management for the mask.
+
+3. KEY ASSETS & STRUCTURE
+-------------------------
+- Core Logic: `Content/Core`
+  - `BP_FirstPersonCharacter.uasset` (Main Player Logic)
+  - `BP_MasterPickup.uasset` (Hidden Items)
+  - `BP_FirstPersonGameMode.uasset` (Game Rules)
+
+- AI/Enemy: `Content/Ghost`
+  - `BP_Ghost.uasset` (Ghost Logic & Visuals)
+
+- Input: `Content/Input`
+  - `IMC_Default.uasset` (Input Mapping Context)
+
+4. PENDING / SUGGESTED NEXT STEPS (Deciphered from State)
+---------------------------------------------------------
+- Ghost AI Behavior: Currently verify if "Patrol" or "Chase" logic is fully implemented (BP_Ghost exists but logic needs testing).
+- Trap Mechanic: README mentions "trap a ghost", but no specific "Trap" asset (like `BP_Trap`) was found in Core. This feature may need to be added.
+- Level Design: `Content/Level` and `Content/Scene_Saloon` exist, suggesting a base level is present but may need expansion.
+- HUD/UI: No specific UI widget (like `WBP_HUD`) was prominent in the top-level scan, likely needed for Mask Timer/Cooldown display.
